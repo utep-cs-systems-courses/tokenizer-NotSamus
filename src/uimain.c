@@ -8,7 +8,7 @@ int main()
 {
   char* histo;
   char** toks;
-    // This is to initiate the history of the tokenizer, so we can keep track of it
+    
   List* hist = init_history();
   puts("Welcome! To Jesus Lopez Tokenizer");
 
@@ -22,12 +22,8 @@ int main()
       
     k[strcspn(k, "\n")] = '\0';
 
-    //this is for tokenizing the word and we are going to assign it to the pointer of chars
-    // that we previously declared
     toks = tokenize(k);
-    //we are going to print the token with the function print_tokens()
     print_tokens(toks);
-    //then free it
     free_tokens(toks);
      
     switch(k[0]){
@@ -58,7 +54,6 @@ int main()
     }
     
   }
-  // free_tokens(toks);
   free_history(hist);
   return 0;
 }
